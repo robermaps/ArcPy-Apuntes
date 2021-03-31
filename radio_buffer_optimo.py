@@ -102,7 +102,7 @@ for elemento in cursor:
 
         # Acciones a realizar tras hallar el radio
         if densidad >= umbral:
-            planta.radio = distancia - 100
+            elemento.radio = distancia - 100
             cursor.updateRow(elemento)
             FID += 1
             distancia = 100
