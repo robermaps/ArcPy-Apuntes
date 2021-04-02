@@ -27,19 +27,19 @@ for i in range(0, resolucion_1):
     except:
         continue
 
-print('Puede cambiar la resolución a cualquiera de las siguientes: \n', resol_propuesta)
+print('Puede cambiar la resolución a cualquiera de las siguientes: ', resol_propuesta)
 
 # Nueva resolución
 while True:
     try:
-        resolucion_2 = input('Introduce la resolución mínima necesaria: ')
+        resolucion_2 = input('Introduce la nueva resolución: ')
         if resolucion_2 not in resol_propuesta:
             print('ERROR - Introduzca solo alguna de las siguientes resoluciones: \n', resol_propuesta)
             continue
         else:
             break
     except:
-        print('ERROR - Asegúrese de introducir un valor numérico')
+        print('ERROR - Asegúrese de introducir un valor numérico coincidente con los propuestos')
         continue
 
 # Aumento de la resolución
