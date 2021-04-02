@@ -4,7 +4,7 @@
 #
 
 # Cargar capa entrada
-raster_entrada = Raster('prod')
+raster_entrada = Raster(ruta)
 
 # Resoluciones
 resolucion_1 = int(raster_entrada.meanCellWidth)
