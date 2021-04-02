@@ -86,7 +86,7 @@ for elemento in cursor:
         area = arcpy.Buffer_analysis('lyr', resultados + 'buffer_' + str(FID) + '_' + str(distancia) + '.shp', distancia, "FULL", "ROUND", "NONE", "", "PLANAR")
 
         # Extracción de píxeles
-        recorte = arcpy.ExtractByMask(raster, area)
+        recorte = ExtractByMask(raster, area)
         recorte_archivo = resultados + 'recorte_' + str(FID) + '_' + str(distancia) + '.tif'
         recorte.save(recorte_archivo)
 
