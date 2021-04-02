@@ -17,9 +17,10 @@ def numpix(lado1, lado2):
     resultado = lado1 ** 2 / lado2 ** 2
     print('Cada píxel se dividió en ' + str(resultado))
     return resultado
-    resol_propuesta = []
 
 # Obtención de múltiplos
+resol_propuesta = []
+
 for i in range(0, resolucion_1):
     try:
         if resolucion_1 % i == 0 and resolucion_1 % i == 0:
