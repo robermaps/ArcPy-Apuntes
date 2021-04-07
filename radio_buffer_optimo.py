@@ -1,15 +1,15 @@
-# Este script genera buffers entidad por entidad 
-# de una capa vectorial, incrementando su radio
-# hasta que el valor de la suma de los píxeles 
-# de otra capa que se encuentren en el buffer
-# supere cierto umbral, momento en el que pasará
-# a la siguiente entidad.
-#
-# El resultado es una nueva columna en la capa
-# de entidades indicando el radio del buffer 
-# necesario para superar dicho umbral para 
-# cada entidad.
-#
+## Este script genera buffers entidad por entidad 
+## de una capa vectorial, incrementando su radio
+## hasta que el valor de la suma de los píxeles 
+## de otra capa que se encuentren en el buffer
+## supere cierto umbral, momento en el que pasará
+## a la siguiente entidad.
+##
+## El resultado es una nueva columna en la capa
+## de entidades indicando el radio del buffer 
+## necesario para superar dicho umbral para 
+## cada entidad.
+##
 
 # Importación de módulos
 
