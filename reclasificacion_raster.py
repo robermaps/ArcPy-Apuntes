@@ -22,7 +22,7 @@ arcpy.CalculateStatistics_management(capa)
 ## Los pixeles del raster de entrada que superen el valor de la variable 'umbral' 
 ## pasaran a tener valor 1 y el resto 0 en una capa nueva 
 umbral = x
-reclasificacion = capa > valor
+reclasificacion = capa > umbral
 reclasificacion.save('capa_reclas.tif')
 
 ## Todos los pixeles de la capa son multiplicados por el valor  
