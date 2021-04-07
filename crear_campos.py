@@ -1,8 +1,8 @@
-# Este script comprueba si un campo existe, y si no lo crea
-#
+## Este script comprueba si un campo existe, y si no lo crea
+##
 
 # Modulos
-import arcpy
+import arcpy, os
  
 # Variables de entorno
 ruta = 'C:\\...'
