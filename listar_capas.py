@@ -4,6 +4,7 @@
 
 # Modulos
 import arcpy
+from arcpy import env
  
 # Entorno
 ruta = 'C:\\...'
