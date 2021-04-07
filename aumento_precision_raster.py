@@ -1,10 +1,19 @@
-# Este script permite aumentar la precisión de los datos de un ráster
-# repartiendo el valor original de cada píxel entre los nuevos píxeles
-# que genera el aumento de su resolución.
-#
+## Este script permite aumentar la precisión de los datos de un ráster
+## repartiendo el valor original de cada píxel entre los nuevos píxeles
+## que genera el aumento de su resolución.
+##
+
+# Modulos
+import arcpy
+from arcpy import env
+
+# Entorno
+ruta = 'C:\\...'
+env.workspace = ruta
+env.overwriteOutput = True
 
 # Cargar capa entrada
-raster_entrada = Raster(ruta)
+raster_entrada = Raster('capa.ext')
 
 # Resoluciones
 resolucion_1 = int(raster_entrada.meanCellWidth)
