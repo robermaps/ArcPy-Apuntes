@@ -1,13 +1,13 @@
-## Ejemplos para listar las capas del directorio de trabajo establecido en 
-## las variables de entorno en función de su nombre y su formato
-#
+## Ejemplos para crear listas con las capas del directorio de trabajo establecido en 
+## las variables de entorno en función de su nombre y su formato.
+##
 
 # Modulos
 import arcpy
 from arcpy import env
  
 # Entorno
-ruta = 'C:\\...'
+ruta = 'C:\\ruta'
 env.workspace = ruta
 
 
