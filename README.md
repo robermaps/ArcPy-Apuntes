@@ -1,35 +1,19 @@
-# Follow me!
-[![](https://img.shields.io/badge/@progra_mapa-white?style=for-the-badge&labelColor=blue&logo=Twitter&logoColor=white)](https://twitter.com/progra_mapa)[![](https://img.shields.io/badge/PrograMapa-grey?style=for-the-badge&logo=wordpress)](https://programapa.wordpress.com)[![](https://img.shields.io/badge/Roberto-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/robertojl)[![](https://img.shields.io/badge/@progra_mapa-white?style=for-the-badge&logo=instagram)](https://instagram.com/progra_mapa)
-
-<h2 class="indice"><strong>Índice</strong></h2>
-
-<p><strong><a href="#vectorial">Datos vectoriales</a></strong><br>&nbsp; &nbsp;- <a href="#modulos_vectorial">Importación de módulos</a><br>&nbsp; &nbsp;- <a href="#campos">Comprobar si un campo existe, y si no crearlo</a><br>&nbsp; &nbsp;- <a href="#listar_vectorial">Listar capas vectoriales de un directorio</a><br>&nbsp; &nbsp;- <a href="#capas_temporales">Crear capas temporales</a><br>&nbsp; &nbsp;- <a href="#seleccion_atributos">Seleccionar entidades por atributos</a><br>&nbsp; &nbsp;- <a href="#seleccion_localizacion">Seleccionar entidades por localización</a><br>&nbsp; &nbsp;- <a href="#cursores">Cursores - acceder a la tabla de atributos</a><br>&nbsp; &nbsp;- <a href="#ver_valores">Imprimir valores de un campo</a><br>&nbsp; &nbsp;- <a href="#modificar_valores">Modificar valores de un campo</a><br>&nbsp; &nbsp;- <a href="#reclasificar_atributos">Reclasificación de atributos</a><br><strong><a href="#raster">Datos ráster</a></strong><br>&nbsp; &nbsp;- <a href="#modulos_raster">Importación de módulos</a><br>&nbsp; &nbsp;- <a href="#listar_raster">Listar capas ráster de un directorio</a><br>&nbsp; &nbsp;- <a href="#obtener_resolucion">Obtener la resolución de una capa</a><br>&nbsp; &nbsp;- <a href="#calcular_estadisticas">Calcular estadísticas</a><br>&nbsp; &nbsp;- <a href="#obtener_limites">Obtener las coordenadas de los límites de una capa</a><br>&nbsp; &nbsp;- <a href="#reclasificar_raster">Reclasificar valores - álgebra de mapas</a><br>&nbsp; &nbsp;- <a href="#matrices">Matrices</a><br>&nbsp; &nbsp;- <a href="#cambiar_resolucion">Cambiar la resolución de una capa</a></p>
-
-<p></p>
-
-<!-- wp:paragraph -->
-
+# Empezando con ArcPy 
 <p>Siguiendo con el post sobre los <a href="https://programapa.wordpress.com/2021/03/06/arcpy-el-modulo-python-de-arcgis/" target="_blank" rel="noreferrer noopener">fundamentos de ArcPY</a>, la librería Python de ArcGIS, en esta entrada voy a resumir algunos de los procedimientos más comunes de los scripts que usan esta librería.</p>
 
-<!-- /wp:paragraph -->
+[![](https://img.shields.io/badge/@progra_mapa-white?style=for-the-badge&labelColor=blue&logo=Twitter&logoColor=white)](https://twitter.com/progra_mapa)[![](https://img.shields.io/badge/PrograMapa-grey?style=for-the-badge&logo=wordpress)](https://programapa.wordpress.com)[![](https://img.shields.io/badge/Roberto-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/robertojl)[![](https://img.shields.io/badge/@progra_mapa-white?style=for-the-badge&logo=instagram)](https://instagram.com/progra_mapa)
 
-<!-- wp:paragraph -->
 
-<p>Los he clasificado según la naturaleza de los datos que manipulemos: vectoriales o ráster.</p>
 
-<!-- /wp:paragraph -->
+<h3 class="indice"><strong>Índice</strong></h3>
 
-<!-- wp:spacer {"height":20} -->
+<p><strong>Datos vectoriales</strong><br>&nbsp; &nbsp;- <a href="#modulos_vectorial">Importación de módulos</a><br>&nbsp; &nbsp;- <a href="#campos">Comprobar si un campo existe, y si no crearlo</a><br>&nbsp; &nbsp;- <a href="#listar_vectorial">Listar capas vectoriales de un directorio</a><br>&nbsp; &nbsp;- <a href="#capas_temporales">Crear capas temporales</a><br>&nbsp; &nbsp;- <a href="#seleccion_atributos">Seleccionar entidades por atributos</a><br>&nbsp; &nbsp;- <a href="#seleccion_localizacion">Seleccionar entidades por localización</a><br>&nbsp; &nbsp;- <a href="#cursores">Cursores - acceder a la tabla de atributos</a><br>&nbsp; &nbsp;- <a href="#ver_valores">Imprimir valores de un campo</a><br>&nbsp; &nbsp;- <a href="#modificar_valores">Modificar valores de un campo</a><br>&nbsp; &nbsp;- <a href="#reclasificar_atributos">Reclasificación de atributos</a><br><strong>Datos ráster</strong><br>&nbsp; &nbsp;- <a href="#modulos_raster">Importación de módulos</a><br>&nbsp; &nbsp;- <a href="#listar_raster">Listar capas ráster de un directorio</a><br>&nbsp; &nbsp;- <a href="#obtener_resolucion">Obtener la resolución de una capa</a><br>&nbsp; &nbsp;- <a href="#calcular_estadisticas">Calcular estadísticas</a><br>&nbsp; &nbsp;- <a href="#obtener_limites">Obtener las coordenadas de los límites de una capa</a><br>&nbsp; &nbsp;- <a href="#reclasificar_raster">Reclasificar valores - álgebra de mapas</a><br>&nbsp; &nbsp;- <a href="#matrices">Matrices</a><br>&nbsp; &nbsp;- <a href="#cambiar_resolucion">Cambiar la resolución de una capa</a></p>
 
-<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<br>
 
-<!-- /wp:spacer -->
-
-<!-- wp:heading {"textAlign":"center"} -->
 
 <h2 class="has-text-align-center" id="datos-vectoriales"><strong>Datos vectoriales</strong></h2>
 
-<!-- /wp:heading -->
 
 <p><a id="modulos_vectorial"></a></p>
 
@@ -799,11 +783,9 @@ altitud_pendientes.save('reclasificacion.tif')</pre>
 
 <!-- wp:image {"align":"center","id":5498,"sizeSlug":"large","linkDestination":"none"} -->
 
-<div class="wp-block-image"><figure class="aligncenter size-large"><img src="https://programapa.files.wordpress.com/2021/03/image-1.png?w=273" alt="" class="wp-image-5498"/><figcaption><em>Matriz de datos ráster. Cada píxel posee un valor numérico. <a href="https://docs.qgis.org/2.14/es/docs/gentle_gis_introduction/raster_data.html" target="_blank" rel="noreferrer noopener">Fuente: docs.qgis</a></em></figcaption></figure></div>
+<div class="wp-block-image"><figure class="aligncenter size-large"><img src="https://programapa.files.wordpress.com/2021/03/image-1.png?w=273" alt="" class="wp-image-5498"/><figcaption><em><a href="https://docs.qgis.org/2.14/es/docs/gentle_gis_introduction/raster_data.html" target="_blank" rel="noreferrer noopener"></a></em></figcaption></figure></div>
 
-<!-- /wp:image -->
-
-<!-- wp:paragraph -->
+Fuente: docs.qgis
 
 <p>Para convertir una capa ráster en una matriz de <strong>NumPy</strong>, ArcPy posee la función <em>arcpy.RasterToNumPyArray()</em>. En el siguiente ejemplo se lleva a cabo dicha conversión especificando que los valores nulos del ráster tengan valor 0:</p>
 
