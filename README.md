@@ -5,7 +5,7 @@
 <h2><strong>Inicio</strong></h2>
 
 <details>
-  <summary><strong>Introducción</strong></summary>
+  <summary><strong>Introducción</strong></summary><br>
 
   
 </details> 
@@ -64,7 +64,7 @@ arcpy.CheckOutExtension("Spatial")</pre>
 <h2><strong>Datos vectoriales</strong></h2>
 
 <details>
-  <summary><strong>Comprobar si un campo existe, y si no crearlo</strong></summary>
+  <summary><strong>Comprobar si un campo existe, y si no crearlo</strong></summary><br>
     
   <p>Para ello hay que usar la <strong>función<em> arcpy.ListFields()</em> para obtener una lista con objetos de tipo campo </strong>correspondientes a los campos de la tabla de atributos de una capa y comprobar su existencia. Si no existe, usar la función <em>arcpy.AddField_management()</em> para agregar el campo</p>
 
@@ -99,7 +99,7 @@ else:
 </details>
 
 <details>
-  <summary><strong>Listar capas vectoriales de un directorio</strong></summary>
+  <summary><strong>Listar capas vectoriales de un directorio</strong></summary><br>
     
 
 <p>La función ListFeatureClasses crea listas con los nombres de las capas junto a su extensión que se encuentran en el directorio de trabajo definido en las variables de entorno. Además, permite filtrarlas por nombre y tipo:</p>
@@ -144,7 +144,7 @@ arcpy.ListFeatureClasses('Colegios', 'Polygon')</pre>
 </details>
 
 <details>
-  <summary><strong>Crear capas temporales</strong></summary>
+  <summary><strong>Crear capas temporales</strong></summary><br>
     
     
 <p>Las capas temporales o capas layer que solo existen mientras se ejecuta el script y nos permiten hacer selecciones y otras operaciones sin modificar la capa original. El primer argumento es para la capa que vamos a 'duplicar' y el segundo para darle el nombre con el que se identificará durante el script:</p>
@@ -158,7 +158,7 @@ arcpy.ListFeatureClasses('Colegios', 'Polygon')</pre>
 </details>
 
 <details>
-  <summary><strong>Seleccionar entidades por atributos y guardarlas en una capa nueva</strong></summary>
+  <summary><strong>Seleccionar entidades por atributos y guardarlas en una capa nueva</strong></summary><br>
     
   <p>El siguiente código crea una nueva selección con los árboles que miden más de 15 metros y los guarda en un archivo nuevo.</p>
 
@@ -182,7 +182,7 @@ arcpy.CopyFeatures_management('arboles_lyr', 'arboles_15m.shp'')</pre>
 </details>
 
 <details>
-  <summary><strong>Seleccionar entidades por localización y guardarlas en una capa nueva</strong></summary>
+  <summary><strong>Seleccionar entidades por localización y guardarlas en una capa nueva</strong></summary><br>
     
   <p>También se pueden hacer selecciones espaciales basadas en las distintas <a href="https://programapa.wordpress.com/2020/11/13/relaciones-espaciales/">relaciones espaciales</a> entre entidades geográficas. En el siguiente ejemplo se seleccionan aquellos árboles que se encuentren <strong>dentro</strong> de una determinada parcela guardada como capa individual:</p>
 
@@ -206,7 +206,7 @@ arcpy.CopyFeatures_management('arboles_lyr', 'arboles_parcela.shp'')</pre>
 </details>
 
 <details>
-  <summary><strong>Cursores - acceder a las tablas de atributos</strong></summary>
+  <summary><strong>Cursores - acceder a las tablas de atributos</strong></summary><br>
     
   <p>Los cursores crean listas con objetos de tipo fila. Cada uno de estos objetos nos permite acceder a los valores de los distintos campos que contiene una fila.</p>
 
@@ -320,19 +320,11 @@ while fila:
 
 del fila</pre>
 
-<!-- /wp:syntaxhighlighter/code -->
-
-<!-- wp:spacer {"height":20} -->
-
-<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
-
-<!-- /wp:spacer -->
-
 <p><a id="reclasificar_atributos"></a></p>
 
 <!-- wp:heading {"level":4} -->
 
-<h4 id="reclasificar-atributos"><strong>Reclasificar atributos</strong></h4>
+<h4><strong>Reclasificar atributos</strong></h4>
 
 <!-- /wp:heading -->
 
@@ -360,15 +352,9 @@ for fila in cursor:
 
 del cursor</pre>
 
-<!-- /wp:syntaxhighlighter/code -->
-
-<!-- wp:paragraph -->
 
 <p>Además de modificar quirúrgicamente los valores que nos interesan de un campo concreto, podemos usar este procedimiento para <strong>reclasificar todos los valores</strong> de un campo, algo muy útil cuando queremos transformar variables continuas en discretas:</p>
 
-<!-- /wp:paragraph -->
-
-<!-- wp:syntaxhighlighter/code {"language":"python"} -->
 
 <pre class="wp-block-syntaxhighlighter-code">cursor = arcpy.UpdateCursor('estaciones_meteo.shp')
 
@@ -402,7 +388,7 @@ del cursor</pre>
 <h2><strong>Datos ráster</strong></h2>
 
 <details>
-  <summary><strong>Listar y filtrar capas ráster</strong></summary>
+  <summary><strong>Listar y filtrar capas ráster</strong></summary><br>
     
   <p> La función ListRasters crea listas con los nombres de las capas junto a su extensión que se encuentran en el directorio de trabajo definido en las variables de entorno. Además, permite filtrarlas por nombre y tipo: </p>
 
@@ -446,7 +432,7 @@ arcpy.ListRasters('Temp*', 'TIFF')</pre>
 
 
 <details>
-  <summary><strong>Obtener la resolución de una capa</strong></summary>
+  <summary><strong>Obtener la resolución de una capa</strong></summary><br>
     
 <p>Las unidades del valor devuelto variarán en función de la proyección de la capa (grados, metros...)</p>
 
@@ -462,7 +448,7 @@ resolucion = capa_raster.meanCellWidth</pre>
 </details>
 
 <details>
-  <summary><strong>Calcular estadísticas</strong></summary>
+  <summary><strong>Calcular estadísticas</strong></summary><br>
    
   <p>Este geoproceso habilita a las capas ráster para aplicar posteriormente algunas herramientas de ArcPy y evitar el error 001100: <em>Failed because no statistics is available</em> </p>
 
@@ -472,7 +458,7 @@ resolucion = capa_raster.meanCellWidth</pre>
 </details>
 
 <details>
-  <summary><strong>Obtener las coordenadas de los límites de la capa</strong></summary>
+  <summary><strong>Obtener las coordenadas de los límites de la capa</strong></summary><br>
    
   <p>Con la función <strong>Point</strong> se puede obtener un <a rel="noreferrer noopener" href="https://desktop.arcgis.com/es/arcmap/10.3/analyze/arcpy-classes/point.htm" target="_blank">objeto de tipo punto</a> con los valores devueltos por los <strong>métodos .extent</strong>:</p>
 
@@ -491,7 +477,7 @@ print(limites)</pre>
 
 
 <details>
-  <summary><strong>Reclasificar valores - álgebra de mapas</strong></summary>
+  <summary><strong>Reclasificar valores - álgebra de mapas</strong></summary><br>
     
   <p>Para <strong>realizar operaciones sobre los pixeles</strong> de un ráster se debe usar la <strong>función Raster()</strong> sobre la imagen que se quiere reclasificar y a continuación utilizar los<strong> operadores</strong> de Python para modificar los valores. </p>
 
@@ -567,7 +553,7 @@ altitud_pendientes.save('reclasificacion.tif')</pre>
 
 
 <details>
-  <summary><strong>Matrices</strong></summary>
+  <summary><strong>Matrices</strong></summary><br>
     
   <p>Operar con matrices reduce el tiempo de procesado de las operaciones sobre capas ráster. Consiste en convertir la información del ráster, que es en sí una matriz de valores, en una matriz o 'tabla' con la que poder operar usando el <a rel="noreferrer noopener" href="https://numpy.org/doc/stable/user/index.html" target="_blank">módulo <strong>NumPy</strong></a> de Python (activado por defecto).</p>
 
@@ -614,7 +600,7 @@ raster_matriz.max()</pre>
 </details>
 
 <details>
-  <summary><strong>Cambiar la resolución de una capa</strong></summary>
+  <summary><strong>Cambiar la resolución de una capa</strong></summary><br>
     
   <p>El siguiente código comprueba si el tamaño del píxel de una capa ráster supera un umbral que hayamos establecido. En tal caso, se creará una nueva imagen con la resolución establecida en dicho umbral:</p>
 
