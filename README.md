@@ -1,23 +1,17 @@
-# Empezando con ArcPy 
-<p>Siguiendo con el post sobre los <a href="https://programapa.wordpress.com/2021/03/06/arcpy-el-modulo-python-de-arcgis/" target="_blank" rel="noreferrer noopener">fundamentos de ArcPY</a>, la librería Python de ArcGIS, en esta entrada voy a resumir algunos de los procedimientos más comunes de los scripts que usan esta librería.</p>
-
-[![](https://img.shields.io/badge/@progra_mapa-white?style=for-the-badge&labelColor=blue&logo=Twitter&logoColor=white)](https://twitter.com/progra_mapa)[![](https://img.shields.io/badge/PrograMapa-grey?style=for-the-badge&logo=wordpress)](https://programapa.wordpress.com)[![](https://img.shields.io/badge/Roberto-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/robertojl)[![](https://img.shields.io/badge/@progra_mapa-white?style=for-the-badge&logo=instagram)](https://instagram.com/progra_mapa)
-
-
-
-<h3 class="indice"><strong>Índice</strong></h3>
-
-<p><strong>Datos vectoriales</strong><br>&nbsp; &nbsp;- <a href="#modulos_vectorial">Importación de módulos</a><br>&nbsp; &nbsp;- <a href="#campos">Comprobar si un campo existe, y si no crearlo</a><br>&nbsp; &nbsp;- <a href="#listar_vectorial">Listar capas vectoriales de un directorio</a><br>&nbsp; &nbsp;- <a href="#capas_temporales">Crear capas temporales</a><br>&nbsp; &nbsp;- <a href="#seleccion_atributos">Seleccionar entidades por atributos</a><br>&nbsp; &nbsp;- <a href="#seleccion_localizacion">Seleccionar entidades por localización</a><br>&nbsp; &nbsp;- <a href="#cursores">Cursores - acceder a la tabla de atributos</a><br>&nbsp; &nbsp;- <a href="#ver_valores">Imprimir valores de un campo</a><br>&nbsp; &nbsp;- <a href="#modificar_valores">Modificar valores de un campo</a><br>&nbsp; &nbsp;- <a href="#reclasificar_atributos">Reclasificación de atributos</a><br><strong>Datos ráster</strong><br>&nbsp; &nbsp;- <a href="#modulos_raster">Importación de módulos</a><br>&nbsp; &nbsp;- <a href="#listar_raster">Listar capas ráster de un directorio</a><br>&nbsp; &nbsp;- <a href="#obtener_resolucion">Obtener la resolución de una capa</a><br>&nbsp; &nbsp;- <a href="#calcular_estadisticas">Calcular estadísticas</a><br>&nbsp; &nbsp;- <a href="#obtener_limites">Obtener las coordenadas de los límites de una capa</a><br>&nbsp; &nbsp;- <a href="#reclasificar_raster">Reclasificar valores - álgebra de mapas</a><br>&nbsp; &nbsp;- <a href="#matrices">Matrices</a><br>&nbsp; &nbsp;- <a href="#cambiar_resolucion">Cambiar la resolución de una capa</a></p>
-
-<br>
+# Apuntes de ArcPy 
+<p>Por Rober J</p>
 
 
 <h2><strong>Inicio</strong></h2>
 
 <details>
-  <summary><strong></strong></summary>
-    <h3 class="has-text-align-center" id="importacion-de-modulos"><strong>Importación de módulos</strong></h3>
+  <summary><strong>Introducción</strong></summary>
 
+  
+</details> 
+  
+<details>
+  <summary><strong>Importación de módulos</strong></summary>
 
 <p>Para llevar a cabo las operaciones con geodatos vectoriales que presento a continuación se deben importar los siguientes módulos y definir las siguientes variables de entorno:</p>
 
@@ -660,77 +654,5 @@ else:
 </details>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+## ¡Sígueme!
+[![](https://img.shields.io/badge/@progra_mapa-white?style=for-the-badge&labelColor=blue&logo=Twitter&logoColor=white)](https://twitter.com/progra_mapa)[![](https://img.shields.io/badge/PrograMapa-grey?style=for-the-badge&logo=wordpress)](https://programapa.wordpress.com)[![](https://img.shields.io/badge/Roberto-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/robertojl)[![](https://img.shields.io/badge/@progra_mapa-white?style=for-the-badge&logo=instagram)](https://instagram.com/progra_mapa)
