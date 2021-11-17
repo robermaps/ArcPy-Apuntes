@@ -39,7 +39,31 @@ env.workspace = ruta
 
 env.overwriteOutput = True</pre>
 
+<p>Para llevar a cabo las operaciones con datos ráster que presento a continuación se deben importar los siguientes módulos y definir las siguientes variables de entorno:</p>
 
+<!-- /wp:paragraph -->
+
+<!-- wp:syntaxhighlighter/code {"language":"python"} -->
+
+<pre class="wp-block-syntaxhighlighter-code"># Modulos
+
+import arcpy
+
+from arcpy import env
+
+from arcpy.sa import *
+
+# Entorno
+
+ruta = 'C:\\...'
+
+env.workspace = ruta
+
+env.overwriteOutput = True
+
+arcpy.CheckOutExtension("Spatial")</pre>
+  
+  
 </details>
 
 
@@ -128,17 +152,11 @@ arcpy.ListFeatureClasses('Colegios', 'Polygon')</pre>
 <details>
   <summary><strong>Crear capas temporales</strong></summary>
     
-    Las capas temporales o <strong>capas layer</strong> que solo existen mientras se ejecuta el script y nos permiten hacer selecciones y otras operaciones sin modificar la capa original. El primer argumento es para la capa que vamos a 'duplicar' y el segundo para darle el nombre con el que se identificará durante el script:
+    
+<p>Las capas temporales o capas layer que solo existen mientras se ejecuta el script y nos permiten hacer selecciones y otras operaciones sin modificar la capa original. El primer argumento es para la capa que vamos a 'duplicar' y el segundo para darle el nombre con el que se identificará durante el script:</p>
 
-<!-- /wp:paragraph -->
-
-<!-- wp:syntaxhighlighter/code {"language":"python"} -->
 
 <pre class="wp-block-syntaxhighlighter-code">arcpy.MakeFeatureLayer_management("capa_entrada.shp", "capa_lyr") </pre>
-
-<!-- /wp:syntaxhighlighter/code -->
-
-<!-- wp:paragraph -->
 
 <p>No es necesario indicar la extensión de la capa temporal. </p>
 
@@ -216,7 +234,7 @@ arcpy.CopyFeatures_management('arboles_lyr', 'arboles_parcela.shp'')</pre>
 
 <p>A continuación tenéis ejemplos del uso de los cursores:</p>
  
-    <h4 id="imprimir-todos-los-valores-de-un-campo"><strong>Imprimir todos los valores de un campo</strong></h4>
+<h4><strong>Imprimir todos los valores de un campo</strong></h4>
 
 <!-- /wp:heading -->
 
@@ -384,133 +402,15 @@ del cursor</pre>
     
 </details>
 
-<details>
-  <summary><strong></strong></summary>
-    
-    
-    
-</details>
+
+
+
+<h2><strong>Datos ráster</strong></h2>
 
 <details>
-  <summary><strong></strong></summary>
+  <summary><strong>Listar y filtrar capas ráster</strong></summary>
     
-    
-    
-</details>
-
-<details>
-  <summary><strong></strong></summary>
-    
-    
-    
-</details>
-
-
-<h2><strong>Datos ráster</strong></h2> ###################################
-
-<details>
-  <summary><strong></strong></summary>
-    
-    
-    
-</details>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2 class="has-text-align-center" id="datos-raster"><strong>Datos ráster</strong></h2>
-
-<!-- /wp:heading -->
-
-<p><a id="modulos_raster"></a></p>
-
-<!-- wp:heading {"textAlign":"center","level":3} -->
-
-<h3 class="has-text-align-center" id="importacion-de-modulos"><strong>Importación de módulos</strong></h3>
-
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-
-<p>Para llevar a cabo las operaciones con datos ráster que presento a continuación se deben importar los siguientes módulos y definir las siguientes variables de entorno:</p>
-
-<!-- /wp:paragraph -->
-
-<!-- wp:syntaxhighlighter/code {"language":"python"} -->
-
-<pre class="wp-block-syntaxhighlighter-code"># Modulos
-
-import arcpy
-
-from arcpy import env
-
-from arcpy.sa import *
-
-# Entorno
-
-ruta = 'C:\\...'
-
-env.workspace = ruta
-
-env.overwriteOutput = True
-
-arcpy.CheckOutExtension("Spatial")</pre>
-
-<!-- /wp:syntaxhighlighter/code -->
-
-<!-- wp:spacer {"height":20} -->
-
-<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
-
-<!-- /wp:spacer -->
-
-<p><a id="listar_raster"></a></p>
-
-<!-- wp:heading {"textAlign":"center","level":3} -->
-
-<h3 class="has-text-align-center" id="listar-y-filtrar-las-capas-raster-del-directorio-de-trabajo"><strong>Listar y filtrar las capas ráster del directorio de trabajo</strong></h3>
-
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-
-<p> La función ListRasters crea listas con los nombres de las capas junto a su extensión que se encuentran en el directorio de trabajo definido en las variables de entorno. Además, permite filtrarlas por nombre y tipo: </p>
+  <p> La función ListRasters crea listas con los nombres de las capas junto a su extensión que se encuentran en el directorio de trabajo definido en las variables de entorno. Además, permite filtrarlas por nombre y tipo: </p>
 
 <!-- /wp:paragraph -->
 
@@ -547,25 +447,13 @@ arcpy.ListRasters('Temperaturas maximas')
 # Listar solo las capas cuyo nombre empiece por 'Temp' y sean de tipo TIFF
 
 arcpy.ListRasters('Temp*', 'TIFF')</pre>
+    
+</details>
 
-<!-- /wp:syntaxhighlighter/code -->
 
-<!-- wp:spacer {"height":20} -->
-
-<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
-
-<!-- /wp:spacer -->
-
-<p><a id="obtener_resolucion"></a></p>
-
-<!-- wp:heading {"textAlign":"center","level":3} -->
-
-<h3 class="has-text-align-center" id="obtener-la-resolucion-de-una-capa"><strong>Obtener la resolución de una capa</strong></h3>
-
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-
+<details>
+  <summary><strong>Obtener la resolución de una capa</strong></summary>
+    
 <p>Las unidades del valor devuelto variarán en función de la proyección de la capa (grados, metros...)</p>
 
 <!-- /wp:paragraph -->
@@ -575,94 +463,43 @@ arcpy.ListRasters('Temp*', 'TIFF')</pre>
 <pre class="wp-block-syntaxhighlighter-code">capa_raster = Raster('MDT.tif')
 
 resolucion = capa_raster.meanCellWidth</pre>
+    
+    
+</details>
 
-<!-- /wp:syntaxhighlighter/code -->
-
-<!-- wp:spacer {"height":20} -->
-
-<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
-
-<!-- /wp:spacer -->
-
-<p><a id="calcular_estadisticas"></a></p>
-
-<!-- wp:heading {"textAlign":"center","level":3} -->
-
-<h3 class="has-text-align-center" id="calcular-estadisticas"><strong>Calcular estadísticas</strong></h3>
-
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-
-<p>Este geoproceso habilita a las capas ráster para aplicar posteriormente algunas herramientas de ArcPy y evitar el error 001100: <em>Failed because no statistics is available</em> </p>
-
-<!-- /wp:paragraph -->
-
-<!-- wp:syntaxhighlighter/code {"language":"python"} -->
+<details>
+  <summary><strong>Calcular estadísticas</strong></summary>
+   
+  <p>Este geoproceso habilita a las capas ráster para aplicar posteriormente algunas herramientas de ArcPy y evitar el error 001100: <em>Failed because no statistics is available</em> </p>
 
 <pre class="wp-block-syntaxhighlighter-code">arcpy.CalculateStatistics_management(capa_raster)</pre>
+    
+    
+</details>
 
-<!-- /wp:syntaxhighlighter/code -->
+<details>
+  <summary><strong>Obtener las coordenadas de los límites de la capa</strong></summary>
+   
+  <p>Con la función <strong>Point</strong> se puede obtener un <a rel="noreferrer noopener" href="https://desktop.arcgis.com/es/arcmap/10.3/analyze/arcpy-classes/point.htm" target="_blank">objeto de tipo punto</a> con los valores devueltos por los <strong>métodos .extent</strong>:</p>
 
-<!-- wp:spacer {"height":20} -->
-
-<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
-
-<!-- /wp:spacer -->
-
-<p><a id="obtener_limites"></a></p>
-
-<!-- wp:heading {"textAlign":"center","level":3} -->
-
-<h3 class="has-text-align-center" id="obtener-las-coordenadas-de-los-limites-de-la-capa"><strong>Obtener las coordenadas de los límites de la capa</strong></h3>
-
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-
-<p>Con la función <strong>Point</strong> se puede obtener un <a rel="noreferrer noopener" href="https://desktop.arcgis.com/es/arcmap/10.3/analyze/arcpy-classes/point.htm" target="_blank">objeto de tipo punto</a> con los valores devueltos por los <strong>métodos .extent</strong>:</p>
-
-<!-- /wp:paragraph -->
-
-<!-- wp:syntaxhighlighter/code {"language":"python"} -->
 
 <pre class="wp-block-syntaxhighlighter-code">capa_raster = Raster('MDT.tif')
 
 limites = 'XMIN = {0}, XMAX = {1}, YMIN = {2}, YMAX = {3}'.format(capa.extent.XMin,capa.extent.XMax,capa.extent.YMin,capa.extent.YMax)
 
 print(limites)</pre>
-
-<!-- /wp:syntaxhighlighter/code -->
-
-<!-- wp:paragraph -->
-
+  
 <p>Este código devolverá algo así: </p>
 
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph {"align":"center","backgroundColor":"cyan-bluish-gray","fontSize":"small"} -->
-
 <p class="has-text-align-center has-cyan-bluish-gray-background-color has-background has-small-font-size">XMIN = 569301.0, XMAX = 810701.0, YMIN = 4413136.0, YMAX = 4755136.0</p>
+    
+</details>
 
-<!-- /wp:paragraph -->
 
-<!-- wp:spacer {"height":20} -->
-
-<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
-
-<!-- /wp:spacer -->
-
-<p><a id="reclasificar_raster"></a></p>
-
-<!-- wp:heading {"textAlign":"center","level":3} -->
-
-<h3 class="has-text-align-center" id="reclasificar-valores-algebra-de-mapas"><strong>Reclasificar valores - álgebra de mapas</strong></h3>
-
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-
-<p>Para <strong>realizar operaciones sobre los pixeles</strong> de un ráster se debe usar la <strong>función Raster()</strong> sobre la imagen que se quiere reclasificar y a continuación utilizar los<strong> operadores</strong> de Python para modificar los valores. </p>
+<details>
+  <summary><strong>Reclasificar valores - álgebra de mapas</strong></summary>
+    
+  <p>Para <strong>realizar operaciones sobre los pixeles</strong> de un ráster se debe usar la <strong>función Raster()</strong> sobre la imagen que se quiere reclasificar y a continuación utilizar los<strong> operadores</strong> de Python para modificar los valores. </p>
 
 <!-- /wp:paragraph -->
 
@@ -730,27 +567,15 @@ altitud_pendientes.save('reclasificacion.tif')</pre>
 
 <!-- wp:paragraph {"backgroundColor":"light-green-cyan"} -->
 
-<p class="has-light-green-cyan-background-color has-background">🗺 Nota: si se usan capas distintas éstas deben encontrarse en el mismo SRC, o si no los píxeles no coincidirán</p>
+<p class="has-light-green-cyan-background-color has-background">🗺 Nota: si se usan capas distintas éstas deben encontrarse en el mismo SRC, o si no los píxeles no coincidirán</p>  
+    
+</details>
 
-<!-- /wp:paragraph -->
 
-<!-- wp:spacer {"height":20} -->
-
-<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
-
-<!-- /wp:spacer -->
-
-<p><a id="matrices"></a></p>
-
-<!-- wp:heading {"textAlign":"center","level":3} -->
-
-<h3 class="has-text-align-center" id="matrices"><strong>Matrices</strong></h3>
-
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-
-<p>Operar con matrices reduce el tiempo de procesado de las operaciones sobre capas ráster. Consiste en convertir la información del ráster, que es en sí una matriz de valores, en una matriz o 'tabla' con la que poder operar usando el <a rel="noreferrer noopener" href="https://numpy.org/doc/stable/user/index.html" target="_blank">módulo <strong>NumPy</strong></a> de Python (activado por defecto).</p>
+<details>
+  <summary><strong>Matrices</strong></summary>
+    
+  <p>Operar con matrices reduce el tiempo de procesado de las operaciones sobre capas ráster. Consiste en convertir la información del ráster, que es en sí una matriz de valores, en una matriz o 'tabla' con la que poder operar usando el <a rel="noreferrer noopener" href="https://numpy.org/doc/stable/user/index.html" target="_blank">módulo <strong>NumPy</strong></a> de Python (activado por defecto).</p>
 
 <!-- /wp:paragraph -->
 
@@ -791,26 +616,13 @@ raster_matriz.min()
 # Extraer el valor máximo
 
 raster_matriz.max()</pre>
+    
+</details>
 
-<!-- /wp:syntaxhighlighter/code -->
-
-<!-- wp:spacer {"height":20} -->
-
-<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
-
-<!-- /wp:spacer -->
-
-<p><a id="cambiar_resolucion"></a></p>
-
-<!-- wp:heading {"textAlign":"center","level":3} -->
-
-<h3 class="has-text-align-center" id="cambiar-la-resolucion-de-una-capa"><strong>Cambiar la resolución de una capa </strong></h3>
-
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-
-<p>El siguiente código comprueba si el tamaño del píxel de una capa ráster supera un umbral que hayamos establecido. En tal caso, se creará una nueva imagen con la resolución establecida en dicho umbral:</p>
+<details>
+  <summary><strong>Cambiar la resolución de una capa</strong></summary>
+    
+  <p>El siguiente código comprueba si el tamaño del píxel de una capa ráster supera un umbral que hayamos establecido. En tal caso, se creará una nueva imagen con la resolución establecida en dicho umbral:</p>
 
 <!-- /wp:paragraph -->
 
@@ -843,3 +655,82 @@ else:
 <p>En la documentación de Esri tenéis más detalles sobre la función <em><a href="https://pro.arcgis.com/es/pro-app/latest/tool-reference/data-management/resample.htm" target="_blank" rel="noreferrer noopener">Resample_management</a></em></p>
 
 <!-- /wp:paragraph -->
+
+    
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
