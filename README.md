@@ -2,7 +2,7 @@
 <p>Por Rober J</p>
 
 
-<h2><strong>Inicio</strong></h2>
+<h2><strong>Introducción 🤓</strong></h2>
 
 <details>
   <summary><strong>Python y ArcGIS</strong></summary><br>
@@ -306,7 +306,7 @@ arcpy.Resample_management('capa_entrada', 'capa_salida', 'nueva_resolución', 'M
 </details> 
 
 
-<h2><strong>Datos vectoriales</strong></h2>
+<h2><strong>Datos vectoriales 📐</strong></h2>
 
 <details>
   <summary><strong>Comprobar si un campo existe, y si no crearlo</strong></summary><br>
@@ -630,7 +630,7 @@ del cursor</pre>
 
 
 
-<h2><strong>Datos ráster</strong></h2>
+<h2><strong>Datos ráster 🛰</strong></h2>
 
 <details>
   <summary><strong>Listar y filtrar capas ráster</strong></summary><br>
