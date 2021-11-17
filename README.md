@@ -5,13 +5,163 @@
 <h2><strong>Inicio</strong></h2>
 
 <details>
-  <summary><strong>Introducción</strong></summary><br>
+  <summary><strong>Python y ArcGIS</strong></summary><br>
+
+  Python es un lenguaje de programación que puede usarse junto a los Sistemas de Información Geográfica (SIG) para ampliar sus funcionalidades mediante la automatización de geoprocesos, gestión avanzada de los datos y creación de nuevas herramientas (entre otras cosas), convirtiéndose en uno de los lenguajes favoritos para hacer toda clase de virguerías con la información geoespacial y no por casualidad: su facilidad de uso (relativa) y flexibilidad lo hace muy atractivo para usarlo en múltiples plataformas por usuarios no muy familiarizados con la programación informática.
+
+Cada SIG cuenta con su propia librería de Python que permite acceder a los geoprocesos de dicho SIG. En este caso, ArcPy es la librería que da acceso a las funciones de ArcGIS en un entorno Python, dándonos acceso a las cajas de herramientas de geoprocesamiento estándar y a la posibilidad de usar otros módulos (siempre que tengamos licencia para usarlos)
+
+¿Qué es lo que cambia? Parece contraintuitivo sustituir un amigable cuadro de texto por un churro de texto, pero gracias a ello accedemos a una herramienta mucho más flexible, ya que dentro de un script (un pequeño código) podemos diseñar qué se ejecuta, cuándo se ejecuta y con qué parámetros, encadenando unos procesos con otros y obteniendo resultados a nuestra medida.
+  
+  
+  ![arcpy_clip](https://user-images.githubusercontent.com/81579458/142191380-5a3f7ba3-8a54-49af-81f6-3be5ba406011.png)
+
+  Por ejemplo, ese ‘output’ que hemos especificado en la función arcpy.Clip podemos meterlo a continuación en otra función distinta, o en varias, y esos resultados pasarlos por otro geoproceso y así sucesivamente.
+  
+</details> 
+
+<details>
+  <summary><strong>Cómo comenzar a usar ArcPy</strong></summary><br>
+
+  <p>Puede hacerse de varias maneras, principalmente:</p>
+
+
+
+<p>A través de la <strong>ventana de Python incorporada en ArcMap</strong>. Es una opción rápida para ejecutar pequeños scripts sin complicarnos demasiado, pero se queda corto puesto que su funcionalidad se reduce a la de escribir código o pegarlo desde otra fuente y ejecutarlo. </p>
+
+
+
+<p>En este caso he ejecutado el Clip de la imagen anterior, recortando la red fluvial usando el polígono de un municipio cualquiera: </p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://programapa.files.wordpress.com/2021/03/ventana_puthon_arcmap.png?w=1024" alt="" class="wp-image-5362" srcset="https://programapa.files.wordpress.com/2021/03/ventana_puthon_arcmap.png?w=1024 1024w, https://programapa.files.wordpress.com/2021/03/ventana_puthon_arcmap.png?w=150 150w, https://programapa.files.wordpress.com/2021/03/ventana_puthon_arcmap.png?w=300 300w, https://programapa.files.wordpress.com/2021/03/ventana_puthon_arcmap.png?w=768 768w, https://programapa.files.wordpress.com/2021/03/ventana_puthon_arcmap.png 1045w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>Haciendo uso de un <strong>entorno de desarrollo integrado (IDE)</strong>, es decir, un software diseñado para trabajar con código y que dispone de herramientas para hacernos la vida más fácil: predicción de texto, resalte de sintaxis, documentación instantánea, cambios múltiples&#8230;</p>
+
+
+
+<p>Existen múltiples IDEs y es cosa de cada uno escoger el que le vaya bien. Personalmente he usado Microsoft Visual Studio Code y PyCharm, y me quedo con el segundo puesto que está diseñado específicamente para Python y me ha dado menos problemas a nivel general (todos tienen sus cosillas&#8230;)</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://programapa.files.wordpress.com/2021/03/image.png?w=1024" alt="" class="wp-image-5364" srcset="https://programapa.files.wordpress.com/2021/03/image.png?w=1024 1024w, https://programapa.files.wordpress.com/2021/03/image.png?w=150 150w, https://programapa.files.wordpress.com/2021/03/image.png?w=300 300w, https://programapa.files.wordpress.com/2021/03/image.png?w=768 768w, https://programapa.files.wordpress.com/2021/03/image.png 1366w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption><em>Aspecto de PyCharm</em></figcaption></figure>
+
+
+
+<p>En cualquier caso, deberás configurar el IDE para que tenga acceso a los módulos de ArcGIS <strong>vinculándolo con el intérprete que ArcGIS trae por defecto</strong>. <strong>El intérprete es el programa que traduce el código de Python para que el ordenador pueda ejecutarlo</strong>, y el módulo ArcPy solo funcionará si se utiliza el IDE junto a este intérprete.</p>
+
+
+
+<p>Generalmente, ArcGIS instala Python en una carpeta llamada Python27 en la raíz del disco duro (generalmente suele ser C:\\ ) por lo que habrá que buscar en esa carpeta el archivo <strong>python.exe</strong> y seleccionarlo como intérprete.</p>
+
+
+  
+  
+  
+</details> 
+
+<details>
+  <summary><strong>Obtener scripts de Model Builder</strong></summary><br>
+
+  <p>Una forma de comenzar montar un código de Python para ArcGIS es utilizar Model Builder para conceptualizar el trabajo que queremos hacer y extraer de él las funciones de geoproceso que necesitaremos. </p>
+
+
+
+<p>En el artículo <em><a href="https://programapa.wordpress.com/2021/02/23/analisis-ubicacion-vertedero/">Análisis de ubicación de un vertedero con Model&nbsp;Builder</a> </em>comento brevemente las ventajas y limitaciones que presenta Model Builder y sus semejanzas con Python. Pues bien, podemos exportar los modelos a archivos Python (archivos con extensión .py) y abrirlos con una IDE para editarlos.</p>
+
+
+
+<p>Siguiendo con el ejemplo del Clip, he construido el modelo en Model Builder y lo he exportado de la siguiente manera:</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://programapa.files.wordpress.com/2021/03/exportar_modelo.png?w=767" alt="" class="wp-image-5369" srcset="https://programapa.files.wordpress.com/2021/03/exportar_modelo.png 767w, https://programapa.files.wordpress.com/2021/03/exportar_modelo.png?w=150 150w, https://programapa.files.wordpress.com/2021/03/exportar_modelo.png?w=300 300w" sizes="(max-width: 767px) 100vw, 767px" /></figure>
+
+
+
+<p>A continuación lo abro en un IDE y presenta el siguiente aspecto. Como comentaba, es muy interesante porque te da una <strong>estructura básica</strong> a partir de la cual continuar desarrollando el script, pero habrá que modificarlo para que funcione:</p>
+
+
+<div class="wp-block-syntaxhighlighter-code "><pre class="brush: python; title: ; notranslate" title="">
+# -*- coding: utf-8 -*-
+# ---------------------------------------------------------------------------
+# clip.py
+# Created on: 2021-03-04 22:32:42.00000
+#   (generated by ArcGIS/ModelBuilder)
+# Description: 
+# ---------------------------------------------------------------------------
+
+# Import arcpy module
+import arcpy
+
+
+# Local variables:
+Red_fluvial = "Red_fluvial"
+seleccion = "seleccion"
+output = "C:\\Users\\Roberto\\Documents\\ArcGIS\\Default.gdb\\output"
+
+# Process: Clip
+arcpy.Clip_analysis(Red_fluvial, seleccion, output, "")
+</pre></div>
+
+
+<div style="height:20px;" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+<p><a id="estructura"></a></p>
+  
+</details> 
+
+<details>
+  <summary><strong>Estructura de un script</strong></summary><br>
+
+  <p>Del código anterior podemos diferenciar varias partes que funcionan a modo de esqueleto para un script:</p>
+
+
+
+<ol><li>La <a rel="noreferrer noopener" href="https://programapa.wordpress.com/2021/01/23/fundamentos-de-python-1-variables-clases-funciones-y-metodos/#codificacion" target="_blank">codificación de caracteres</a> que va a usarse (utf-8)</li><li>Metadatos del archivo .py como su nombre o fecha de creación</li><li><strong>Importación del módulo arcpy</strong> (¡no olvidar!)</li><li><a rel="noreferrer noopener" href="https://programapa.wordpress.com/2021/01/23/fundamentos-de-python-1-variables-clases-funciones-y-metodos/#clases_y_variables" target="_blank">Variables</a> locales: conjunto de variables que definen los parámetros de los geoprocesos, como son las rutas de las capas de entrada (<em>Red_fluvial</em> y <em>seleccion</em>) y de salida (<em>output</em>) </li><li>Procesos: la parte del código que ejecutará las <a rel="noreferrer noopener" href="https://programapa.wordpress.com/2021/01/23/fundamentos-de-python-1-variables-clases-funciones-y-metodos/#metodos_y_funciones" target="_blank">funciones</a> de geoproceso haciendo uso de las variables que definimos en el punto anterior</li></ol>
+
+
+
+<p>Sin embargo, esta estructura base <strong>no funcionará correctamente</strong> fuera del entorno de ArcMap porque no reconocerá las capas, por lo que tendremos que modificar las variables añadiendo una <a rel="noreferrer noopener" href="https://programapa.wordpress.com/2021/01/23/fundamentos-de-python-1-variables-clases-funciones-y-metodos/#rutas" target="_blank">ruta válida</a>. Además, aunque cambiemos la ruta, este script solo podrá ejecutarse 1 sola vez porque se generaría una capa con un nombre que ya existe, por lo que tendremos que asegurarnos de tener correctamente configurados algunos parámetros de <strong>variables de entorno</strong> como veremos a continuación.</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img src="https://programapa.files.wordpress.com/2021/03/estructura_arcpy.png?w=677" alt="" class="wp-image-5385" srcset="https://programapa.files.wordpress.com/2021/03/estructura_arcpy.png 677w, https://programapa.files.wordpress.com/2021/03/estructura_arcpy.png?w=150 150w, https://programapa.files.wordpress.com/2021/03/estructura_arcpy.png?w=300 300w" sizes="(max-width: 677px) 100vw, 677px" /></figure></div>
+
 
   
 </details> 
+
   
 <details>
   <summary><strong>Importación de módulos</strong></summary><br>
+  
+  <p>Antes de nada, tendremos que importar ArcPY junto al resto de módulos que vayamos a usar durante el script. Si, por ejemplo, vamos a querer que se cree automáticamente una nueva carpeta con el resultado, no se nos puede olvidar importar también el módulo os:</p>
+
+
+<div class="wp-block-syntaxhighlighter-code "><pre class="brush: python; title: ; notranslate" title="">
+import arcpy, os
+</pre></div>
+
+
+<p>Importar arcpy tal como mostramos arriba da acceso a las siguientes funcionalidades (<em>fuente: <a rel="noreferrer noopener" href="https://desktop.arcgis.com/es/arcmap/10.3/analyze/python/importing-arcpy.htm" target="_blank">Esri</a></em>):</p>
+
+
+
+<ul><li><a href="https://desktop.arcgis.com/es/arcmap/10.3/tools/analysis-toolbox/an-overview-of-the-analysis-toolbox.htm">Caja de herramientas de Análisis</a> (Analysis Tools)</li><li><a href="https://desktop.arcgis.com/es/arcmap/10.3/tools/cartography-toolbox/an-overview-of-the-cartography-toolbox.htm">Caja de herramientas Cartografía</a> (Cartography tools)</li><li><a href="https://desktop.arcgis.com/es/arcmap/10.3/tools/conversion-toolbox/an-overview-of-the-conversion-toolbox.htm">Caja de herramientas Conversión</a> (Conversion tools)</li><li><a href="https://desktop.arcgis.com/es/arcmap/10.3/tools/data-management-toolbox/an-overview-of-the-data-management-toolbox.htm">Caja de herramientas Administración de datos</a> (Data Management Tools)</li><li><a href="https://desktop.arcgis.com/es/arcmap/10.3/tools/editing-toolbox/an-overview-of-the-editing-toolbox.htm">Caja de herramientas Edición</a> (Editing Tools)</li><li><a href="https://desktop.arcgis.com/es/arcmap/10.3/tools/geocoding-toolbox/an-overview-of-the-geocoding-toolbox.htm">Caja de herramientas Geocodificación</a> (Geocoding Tools)</li><li><a href="https://desktop.arcgis.com/es/arcmap/10.3/tools/linear-ref-toolbox/an-overview-of-the-linear-referencing-toolbox.htm">Caja de herramientas Referencia lineal</a> (Linear Referencing Tools)</li><li><a href="https://desktop.arcgis.com/es/arcmap/10.3/tools/multidimension-toolbox/an-overview-of-the-multidimension-toolbox.htm">Caja de herramientas de Multidimensión</a> (Multidimension Tools)</li><li><a href="https://desktop.arcgis.com/es/arcmap/10.3/tools/spatial-statistics-toolbox/an-overview-of-the-spatial-statistics-toolbox.htm">Caja de herramientas Estadística espacial</a> (Spatial Statistics Analyst)</li></ul>
+
+
+
+<p>Sin embargo, existen <strong>otros módulos</strong> que deben importarse a parte para acceder a más funciones de ArcGIS:</p>
+
+
+
+<ul><li><a rel="noreferrer noopener" href="https://desktop.arcgis.com/es/arcmap/10.3/analyze/arcpy-data-access/what-is-the-data-access-module-.htm" target="_blank">arcpy.da</a> &#8211; módulo de acceso de datos</li><li><a rel="noreferrer noopener" href="https://desktop.arcgis.com/es/arcmap/10.3/analyze/arcpy-mapping/introduction-to-arcpy-mapping.htm" target="_blank">arcpy.mapping</a> &#8211; módulo de representación cartográfica</li><li><a rel="noreferrer noopener" href="https://desktop.arcgis.com/es/arcmap/10.3/analyze/arcpy-spatial-analyst/what-is-the-spatial-analyst-module.htm" target="_blank">arcpy.sa</a> &#8211; módulo del Spatial Analyst</li><li><a rel="noreferrer noopener" href="https://desktop.arcgis.com/es/arcmap/10.3/analyze/arcpy-network-analyst/what-is-network-analyst-module.htm" target="_blank">arcpy.na</a> &#8211; módulo del Network Analyst </li><li><a rel="noreferrer noopener" href="https://desktop.arcgis.com/es/arcmap/latest/extensions/geostatistical-analyst/what-is-arcgis-geostatistical-analyst-.htm" target="_blank">arcpy.ga</a> &#8211; módulo del Geostatistical Analyst</li></ul>
+
 
 <p>Para llevar a cabo las operaciones con geodatos vectoriales que presento a continuación se deben importar los siguientes módulos y definir las siguientes variables de entorno:</p>
 
@@ -59,6 +209,101 @@ arcpy.CheckOutExtension("Spatial")</pre>
   
   
 </details>
+
+<details>
+  <summary><strong>Variables de entorno</strong></summary><br>
+
+  <p>Las variables de entorno o <em>environments</em> son unos parámetros o funciones que conviene definir al comienzo del script (justo tras la importación de módulos) para que los geoprocesos funcionen de una u otra manera. Son, por así decirlo, &#8216;las reglas&#8217; que regirán el script.</p>
+
+
+
+<p>Estas variables se encuentran dentro de la clase <em>env</em> de ArcPy. Son bastante numerosas y <a rel="noreferrer noopener" href="https://desktop.arcgis.com/es/arcmap/10.3/analyze/arcpy-classes/env.htm" target="_blank">podéis encontrarlas todas aquí</a>, pero los más básicos serían:</p>
+
+
+
+<ul><li><strong>Directorio de trabajo</strong> &#8211; la carpeta en la que se localizan los geodatos. Definirlo es útil porque nos permitirá ahorrarnos el tener que escribir rutas completas en el futuro, es decir, podremos llamar a las capas solo por su nombre y su extensión, ya sean inputs u outputs. </li><li><strong>Sobreescritura de archivos</strong> &#8211; al definirla como <em>True</em> se borrarán de forma automática las capas antiguas que tengan el mismo nombre que una capa nueva que se acabe de generar. En nuestro ejemplo del Clip, al tener este parámetro activado el segundo Clip borraría el primero ya que el output en este caso tiene siempre el mismo nombre.</li><li><strong>Sistema de proyección</strong> &#8211; establecer el SRC de nuestro marco de datos. Al igual que en ArcMap, se proyectarán las capas &#8216;al vuelo&#8217; usando el SRC de la primera capa leída por nuestro script.</li><li><strong>Activación de extensiones</strong> &#8211; muchos geoprocesos como los del módulo Spatial Analyst se encuentran bajo licencia, por lo que deben activarse del mismo modo que hacemos en ArcMap &#8211; Customize &#8211; Extensions&#8230;</li></ul>
+
+
+<div class="wp-block-syntaxhighlighter-code "><pre class="brush: python; title: ; notranslate" title="">
+# Definir el directorio de trabajo
+arcpy.env.workspace = 'ruta'
+
+# Activar la sobreescritura de archivos
+arcpy.env.overwriteOutput = True
+
+# Establecer el SRC al ETRS89 UTM Zona 30 Norte
+arcpy.env.cartographicCoordinateSystem = "Coordinate Systems\Projected Coordinate Systems\UTM\Europe\ETRS 1989 UTM Zone 30N.prj"
+
+# Activar la extensión Spatial Analyst
+arcpy.CheckOutExtension('spatial') 
+
+</pre></div>
+
+
+<p>Entre otros entornos están el de establecer un SRC para las capas de salida, la resolución de las nuevas capas ráster, crear pirámides o el añadir las nuevas capas a la visualización.</p>
+
+
+  
+</details> 
+
+<details>
+  <summary><strong>Variables locales</strong></summary><br>
+
+  <p>Como dijimos antes, son el conjunto de <a rel="noreferrer noopener" href="https://programapa.wordpress.com/2021/01/23/fundamentos-de-python-1-variables-clases-funciones-y-metodos/#clases_y_variables" target="_blank">variables</a> que usarán los geoprocesos para llevarse a cabo.  Suelen ser variables locales:</p>
+
+
+
+<ul><li>Las rutas de las capas de entrada</li><li>Las rutas de las capas de salida</li><li>Filtros de archivos</li><li>Cálculos de valores </li><li>Expresiones <a href="https://programapa.wordpress.com/2021/02/01/fundamentos-de-sql-y-postgre/" target="_blank" rel="noreferrer noopener">SQL</a> para hacer selecciones</li><li>&#8230;</li></ul>
+
+
+
+<p>Hay tantas variables variables locales como distintos geoprocesos que vayamos a utilizar y parámetros de éstos tengamos que introducir. Para la definición de estas variables, es habitual usar <a rel="noreferrer noopener" href="https://programapa.wordpress.com/2021/01/23/fundamentos-de-python-1-variables-clases-funciones-y-metodos/#inputs" target="_blank">inputs</a> para que sea el usuario el que las defina sobre la marcha. </p>
+
+
+  
+</details> 
+
+<details>
+  <summary><strong>Geoprocesos</strong></summary><br>
+
+  <p>Es al final del script cuando deberíamos colocar los geoprocesos, puesto que éstos harán uso de las variables que hemos definido previamente.</p>
+
+
+
+<p>La sintaxis de todos estos procesos se encuentran en la documentación oficial de Esri a la que podéis acceder a través de los enlaces del apartado Importación de módulos.</p>
+
+
+
+<p>Algunas de las funciones de geoproceso más básicas de ArcPy son:</p>
+
+
+<div class="wp-block-syntaxhighlighter-code "><pre class="brush: python; title: ; notranslate" title="">
+## Crear una capa temporal a partir de una capa existente
+arcpy.MakeFeatureLayer_management('capa_entrada', 'lyr')
+
+## Seleccionar entidades según sus atributos
+arcpy.SelectLayerByAttribute_management('lyr', 'TIPO_SELECCION', 'expresión SQL')
+
+## Copiar entidades a una nueva capa
+arcpy.CopyFeatures_management('lyr', 'nueva_capa')
+
+## CLIP
+arcpy.Clip_analysis('capa_entrada', 'capa_clip', 'capa_salida', ' ')
+
+## BUFFER 
+arcpy.Buffer_analysis('capa_entrada', 'capa_salida', 'distancia', 'FULL', 'ROUND', 'NONE', ' ', 'PLANAR')
+
+## CALCULATE STATISTICS (raster)
+arcpy.CalculateStatistics_management('capa_entrada')
+
+## RESAMPLE (modificar resolución)
+arcpy.Resample_management('capa_entrada', 'capa_salida', 'nueva_resolución', 'MÉTODO')
+
+
+</pre></div>
+
+  
+</details> 
 
 
 <h2><strong>Datos vectoriales</strong></h2>
