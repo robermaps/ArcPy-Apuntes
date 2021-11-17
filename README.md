@@ -12,18 +12,12 @@
 <br>
 
 
-<h2 class="has-text-align-center" id="datos-vectoriales"><strong>Datos vectoriales</strong></h2>
+<h2><strong>Inicio</strong></h2>
 
+<details>
+  <summary><strong></strong></summary>
+    <h3 class="has-text-align-center" id="importacion-de-modulos"><strong>Importación de módulos</strong></h3>
 
-<p><a id="modulos_vectorial"></a></p>
-
-<!-- wp:heading {"textAlign":"center","level":3} -->
-
-<h3 class="has-text-align-center" id="importacion-de-modulos"><strong>Importación de módulos</strong></h3>
-
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
 
 <p>Para llevar a cabo las operaciones con geodatos vectoriales que presento a continuación se deben importar los siguientes módulos y definir las siguientes variables de entorno:</p>
 
@@ -45,25 +39,16 @@ env.workspace = ruta
 
 env.overwriteOutput = True</pre>
 
-<!-- /wp:syntaxhighlighter/code -->
 
-<!-- wp:spacer {"height":20} -->
+</details>
 
-<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
 
-<!-- /wp:spacer -->
+<h2><strong>Datos vectoriales</strong></h2>
 
-<p><a id="campos"></a></p>
-
-<!-- wp:heading {"textAlign":"center","level":3} -->
-
-<h3 class="has-text-align-center" id="comprobar-si-un-campo-existe-y-si-no-crearlo"><strong>Comprobar si un campo existe, y si no crearlo</strong></h3>
-
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-
-<p>Para ello hay que usar la <strong>función<em> arcpy.ListFields()</em> para obtener una lista con objetos de tipo campo </strong>correspondientes a los campos de la tabla de atributos de una capa y comprobar su existencia. Si no existe, usar la función <em>arcpy.AddField_management()</em> para agregar el campo</p>
+<details>
+  <summary><strong>Comprobar si un campo existe, y si no crearlo</strong></summary>
+    
+  <p>Para ello hay que usar la <strong>función<em> arcpy.ListFields()</em> para obtener una lista con objetos de tipo campo </strong>correspondientes a los campos de la tabla de atributos de una capa y comprobar su existencia. Si no existe, usar la función <em>arcpy.AddField_management()</em> para agregar el campo</p>
 
 <!-- /wp:paragraph -->
 
@@ -92,24 +77,12 @@ else:
     arcpy.AddField_management(capa,nuevo_campo,tipo...)
 
     print('El campo ' + nuevo_campo + ' ha sido creado')   </pre>
+    
+</details>
 
-<!-- /wp:syntaxhighlighter/code -->
-
-<!-- wp:spacer {"height":20} -->
-
-<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
-
-<!-- /wp:spacer -->
-
-<p><a id="listar_vectorial"></a></p>
-
-<!-- wp:heading {"textAlign":"center","level":3} -->
-
-<h3 class="has-text-align-center" id="listar-capas-vectoriales-de-un-directorio"><strong>Listar capas vectoriales de un directorio</strong></h3>
-
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
+<details>
+  <summary><strong>Listar capas vectoriales de un directorio</strong></summary>
+    
 
 <p>La función ListFeatureClasses crea listas con los nombres de las capas junto a su extensión que se encuentran en el directorio de trabajo definido en las variables de entorno. Además, permite filtrarlas por nombre y tipo:</p>
 
@@ -149,25 +122,13 @@ arcpy.ListFeatureClasses('Colegios')
 
 arcpy.ListFeatureClasses('Colegios', 'Polygon')</pre>
 
-<!-- /wp:syntaxhighlighter/code -->
+    
+</details>
 
-<!-- wp:spacer {"height":20} -->
-
-<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
-
-<!-- /wp:spacer -->
-
-<p><a id="capas_temporales"></a></p>
-
-<!-- wp:heading {"textAlign":"center","level":3} -->
-
-<h3 class="has-text-align-center" id="crear-capas-temporales"><strong>Crear capas temporales</strong></h3>
-
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-
-<p>Las capas temporales o <em><strong>capas layer</strong></em> que solo existen mientras se ejecuta el script y nos permiten hacer selecciones y otras operaciones sin modificar la capa original. El primer argumento es para la capa que vamos a 'duplicar' y el segundo para darle el nombre con el que se identificará durante el script:</p>
+<details>
+  <summary><strong>Crear capas temporales</strong></summary>
+    
+    Las capas temporales o <strong>capas layer</strong> que solo existen mientras se ejecuta el script y nos permiten hacer selecciones y otras operaciones sin modificar la capa original. El primer argumento es para la capa que vamos a 'duplicar' y el segundo para darle el nombre con el que se identificará durante el script:
 
 <!-- /wp:paragraph -->
 
@@ -181,25 +142,13 @@ arcpy.ListFeatureClasses('Colegios', 'Polygon')</pre>
 
 <p>No es necesario indicar la extensión de la capa temporal. </p>
 
-<!-- /wp:paragraph -->
+    
+</details>
 
-<!-- wp:spacer {"height":20} -->
-
-<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
-
-<!-- /wp:spacer -->
-
-<p><a id="seleccion_atributos"></a></p>
-
-<!-- wp:heading {"textAlign":"center","level":3} -->
-
-<h3 class="has-text-align-center" id="seleccionar-entidades-por-atributos-y-guardarlas-en-una-capa-nueva"><strong>Seleccionar entidades por atributos y guardarlas en una capa nueva</strong></h3>
-
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-
-<p>El siguiente código crea una nueva selección con los árboles que miden más de 15 metros y los guarda en un archivo nuevo.</p>
+<details>
+  <summary><strong>Seleccionar entidades por atributos y guardarlas en una capa nueva</strong></summary>
+    
+  <p>El siguiente código crea una nueva selección con los árboles que miden más de 15 metros y los guarda en un archivo nuevo.</p>
 
 <!-- /wp:paragraph -->
 
@@ -217,25 +166,13 @@ arcpy.CopyFeatures_management('arboles_lyr', 'arboles_15m.shp'')</pre>
 
 <p>En la documentación de Esri tenéis más detalles sobre la función <em><a rel="noreferrer noopener" href="https://pro.arcgis.com/es/pro-app/latest/tool-reference/data-management/select-layer-by-attribute.htm" target="_blank">SelectLayerByAttribute</a></em>  </p>
 
-<!-- /wp:paragraph -->
+    
+</details>
 
-<!-- wp:spacer {"height":20} -->
-
-<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
-
-<!-- /wp:spacer -->
-
-<p><a id="seleccion_localizacion"></a></p>
-
-<!-- wp:heading {"textAlign":"center","level":3} -->
-
-<h3 class="has-text-align-center" id="seleccionar-entidades-por-localizacion-y-guardarlas-en-una-capa-nueva"><strong>Seleccionar entidades por localización y guardarlas en una capa nueva </strong></h3>
-
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-
-<p>También se pueden hacer selecciones espaciales basadas en las distintas <a href="https://programapa.wordpress.com/2020/11/13/relaciones-espaciales/">relaciones espaciales</a> entre entidades geográficas. En el siguiente ejemplo se seleccionan aquellos árboles que se encuentren <strong>dentro</strong> de una determinada parcela guardada como capa individual:</p>
+<details>
+  <summary><strong>Seleccionar entidades por localización y guardarlas en una capa nueva</strong></summary>
+    
+  <p>También se pueden hacer selecciones espaciales basadas en las distintas <a href="https://programapa.wordpress.com/2020/11/13/relaciones-espaciales/">relaciones espaciales</a> entre entidades geográficas. En el siguiente ejemplo se seleccionan aquellos árboles que se encuentren <strong>dentro</strong> de una determinada parcela guardada como capa individual:</p>
 
 <!-- /wp:paragraph -->
 
@@ -252,26 +189,14 @@ arcpy.CopyFeatures_management('arboles_lyr', 'arboles_parcela.shp'')</pre>
 <!-- wp:paragraph -->
 
 <p> En la documentación de Esri tenéis más detalles sobre la función <em><a rel="noreferrer noopener" href="https://desktop.arcgis.com/es/arcmap/latest/tools/data-management-toolbox/select-layer-by-location.htm" target="_blank">SelectLayerByLocation</a></em> </p>
+    
+    
+</details>
 
-<!-- /wp:paragraph -->
-
-<!-- wp:spacer {"height":20} -->
-
-<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
-
-<!-- /wp:spacer -->
-
-<p><a id="cursores"></a></p>
-
-<!-- wp:heading {"textAlign":"center","level":3} -->
-
-<h3 class="has-text-align-center" id="cursores-acceder-a-las-tablas-de-atributos"><strong>Cursores - acceder a las tablas de atributos</strong></h3>
-
-<!-- /wp:heading -->
-
-<!-- wp:paragraph -->
-
-<p>Los cursores crean listas con objetos de tipo fila. Cada uno de estos objetos nos permite acceder a los valores de los distintos campos que contiene una fila.</p>
+<details>
+  <summary><strong>Cursores - acceder a las tablas de atributos</strong></summary>
+    
+  <p>Los cursores crean listas con objetos de tipo fila. Cada uno de estos objetos nos permite acceder a los valores de los distintos campos que contiene una fila.</p>
 
 <!-- /wp:paragraph -->
 
@@ -290,20 +215,8 @@ arcpy.CopyFeatures_management('arboles_lyr', 'arboles_parcela.shp'')</pre>
 <!-- wp:paragraph -->
 
 <p>A continuación tenéis ejemplos del uso de los cursores:</p>
-
-<!-- /wp:paragraph -->
-
-<!-- wp:spacer {"height":20} -->
-
-<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
-
-<!-- /wp:spacer -->
-
-<p><a id="ver_valores"></a></p>
-
-<!-- wp:heading {"level":4} -->
-
-<h4 id="imprimir-todos-los-valores-de-un-campo"><strong>Imprimir todos los valores de un campo</strong></h4>
+ 
+    <h4 id="imprimir-todos-los-valores-de-un-campo"><strong>Imprimir todos los valores de un campo</strong></h4>
 
 <!-- /wp:heading -->
 
@@ -468,18 +381,78 @@ for fila in cursor:
         cursor.updaterow(fila)
 
 del cursor</pre>
+    
+</details>
 
-<!-- /wp:syntaxhighlighter/code -->
+<details>
+  <summary><strong></strong></summary>
+    
+    
+    
+</details>
 
-<!-- wp:spacer {"height":20} -->
+<details>
+  <summary><strong></strong></summary>
+    
+    
+    
+</details>
 
-<div style="height:20px" aria-hidden="true" class="wp-block-spacer"></div>
+<details>
+  <summary><strong></strong></summary>
+    
+    
+    
+</details>
 
-<!-- /wp:spacer -->
 
-<p><a id="raster"></a></p>
+<h2><strong>Datos ráster</strong></h2> ###################################
 
-<!-- wp:heading {"textAlign":"center"} -->
+<details>
+  <summary><strong></strong></summary>
+    
+    
+    
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <h2 class="has-text-align-center" id="datos-raster"><strong>Datos ráster</strong></h2>
 
