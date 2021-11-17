@@ -11,7 +11,7 @@
 </details> 
   
 <details>
-  <summary><strong>Importación de módulos</strong></summary>
+  <summary><strong>Importación de módulos</strong></summary><br>
 
 <p>Para llevar a cabo las operaciones con geodatos vectoriales que presento a continuación se deben importar los siguientes módulos y definir las siguientes variables de entorno:</p>
 
