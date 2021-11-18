@@ -12,7 +12,7 @@ Cada SIG cuenta con su propia librería de Python que permite acceder a los geop
   ![arcpy_clip](https://user-images.githubusercontent.com/81579458/142191380-5a3f7ba3-8a54-49af-81f6-3be5ba406011.png)
   Por ejemplo, ese ‘output’ que hemos especificado en la función arcpy.Clip podemos meterlo a continuación en otra función distinta, o en varias, y esos resultados pasarlos por otro geoproceso y así sucesivamente.
   
-</details> 
+<br></details> 
 <details>
   <summary><strong>Cómo comenzar a usar ArcPy</strong></summary><br>
   <p>Puede hacerse de varias maneras, principalmente:</p>
@@ -27,7 +27,7 @@ Cada SIG cuenta con su propia librería de Python que permite acceder a los geop
   
   
   
-</details> 
+<br></details> 
 <details>
   <summary><strong>Obtener scripts de Model Builder</strong></summary><br>
   <p>Una forma de comenzar montar un código de Python para ArcGIS es utilizar Model Builder para conceptualizar el trabajo que queremos hacer y extraer de él las funciones de geoproceso que necesitaremos. </p>
@@ -53,7 +53,7 @@ output = "C:\\Users\\Roberto\\Documents\\ArcGIS\\Default.gdb\\output"
 arcpy.Clip_analysis(Red_fluvial, seleccion, output, "")
 </pre>
   
-</details> 
+<br></details> 
 <details>
   <summary><strong>Estructura de un script</strong></summary><br>
   <p>Del código anterior podemos diferenciar varias partes que funcionan a modo de esqueleto para un script:</p>
@@ -61,7 +61,7 @@ arcpy.Clip_analysis(Red_fluvial, seleccion, output, "")
 <p>Sin embargo, esta estructura base <strong>no funcionará correctamente</strong> fuera del entorno de ArcMap porque no reconocerá las capas, por lo que tendremos que modificar las variables añadiendo una <a rel="noreferrer noopener" href="https://programapa.wordpress.com/2021/01/23/fundamentos-de-python-1-variables-clases-funciones-y-metodos/#rutas" target="_blank">ruta válida</a>. Además, aunque cambiemos la ruta, este script solo podrá ejecutarse 1 sola vez porque se generaría una capa con un nombre que ya existe, por lo que tendremos que asegurarnos de tener correctamente configurados algunos parámetros de <strong>variables de entorno</strong> como veremos a continuación.</p>
 <div><figure><img src="https://programapa.files.wordpress.com/2021/03/estructura_arcpy.png?w=677" alt="" class="wp-image-5385" srcset="https://programapa.files.wordpress.com/2021/03/estructura_arcpy.png 677w, https://programapa.files.wordpress.com/2021/03/estructura_arcpy.png?w=150 150w, https://programapa.files.wordpress.com/2021/03/estructura_arcpy.png?w=300 300w" sizes="(max-width: 677px) 100vw, 677px" /></figure>
   
-</details> 
+<br></details> 
   
 <details>
   <summary><strong>Importación de módulos</strong></summary><br>
@@ -94,7 +94,7 @@ env.overwriteOutput = True
 arcpy.CheckOutExtension("Spatial")</pre>
   
   
-</details>
+<br></details>
 <details>
   <summary><strong>Variables de entorno</strong></summary><br>
   <p>Las variables de entorno o <em>environments</em> son unos parámetros o funciones que conviene definir al comienzo del script (justo tras la importación de módulos) para que los geoprocesos funcionen de una u otra manera. Son, por así decirlo, &#8216;las reglas&#8217; que regirán el script.</p>
@@ -112,14 +112,14 @@ arcpy.CheckOutExtension('spatial')
 </pre>
 <p>Entre otros entornos están el de establecer un SRC para las capas de salida, la resolución de las nuevas capas ráster, crear pirámides o el añadir las nuevas capas a la visualización.</p>
   
-</details> 
+<br></details> 
 <details>
   <summary><strong>Variables locales</strong></summary><br>
   <p>Como dijimos antes, son el conjunto de <a rel="noreferrer noopener" href="https://programapa.wordpress.com/2021/01/23/fundamentos-de-python-1-variables-clases-funciones-y-metodos/#clases_y_variables" target="_blank">variables</a> que usarán los geoprocesos para llevarse a cabo.  Suelen ser variables locales:</p>
 <ul><li>Las rutas de las capas de entrada</li><li>Las rutas de las capas de salida</li><li>Filtros de archivos</li><li>Cálculos de valores </li><li>Expresiones <a href="https://programapa.wordpress.com/2021/02/01/fundamentos-de-sql-y-postgre/" target="_blank" rel="noreferrer noopener">SQL</a> para hacer selecciones</li><li>&#8230;</li></ul>
 <p>Hay tantas variables variables locales como distintos geoprocesos que vayamos a utilizar y parámetros de éstos tengamos que introducir. Para la definición de estas variables, es habitual usar <a rel="noreferrer noopener" href="https://programapa.wordpress.com/2021/01/23/fundamentos-de-python-1-variables-clases-funciones-y-metodos/#inputs" target="_blank">inputs</a> para que sea el usuario el que las defina sobre la marcha. </p>
   
-</details> 
+<br></details> 
 <details>
   <summary><strong>Geoprocesos</strong></summary><br>
   <p>Es al final del script cuando deberíamos colocar los geoprocesos, puesto que éstos harán uso de las variables que hemos definido previamente.</p>
@@ -142,7 +142,7 @@ arcpy.CalculateStatistics_management('capa_entrada')
 arcpy.Resample_management('capa_entrada', 'capa_salida', 'nueva_resolución', 'MÉTODO')
 </pre>
   
-</details> 
+<br></details> 
 <h2><strong>Datos vectoriales 📐</strong></h2>
 <details>
   <summary><strong>Comprobar si un campo existe, y si no crearlo</strong></summary><br>
@@ -161,7 +161,7 @@ else:
     arcpy.AddField_management(capa,nuevo_campo,tipo...)
     print('El campo ' + nuevo_campo + ' ha sido creado')   </pre>
     
-</details>
+<br></details>
 <details>
   <summary><strong>Listar capas vectoriales de un directorio</strong></summary><br>
     
@@ -183,7 +183,7 @@ arcpy.ListFeatureClasses('Colegios')
 # Listar solo las capas cuyo nombre coincida con 'Colegios' y sean de tipo poligonal
 arcpy.ListFeatureClasses('Colegios', 'Polygon')</pre>
     
-</details>
+<br></details>
 <details>
   <summary><strong>Crear capas temporales</strong></summary><br>
     
@@ -192,7 +192,7 @@ arcpy.ListFeatureClasses('Colegios', 'Polygon')</pre>
 <pre >arcpy.MakeFeatureLayer_management("capa_entrada.shp", "capa_lyr") </pre>
 <p>No es necesario indicar la extensión de la capa temporal. </p>
     
-</details>
+<br></details>
 <details>
   <summary><strong>Seleccionar entidades por atributos y guardarlas en una capa nueva</strong></summary><br>
     
@@ -202,7 +202,7 @@ arcpy.SelectLayerByAttribute_management('arboles_lyr', "NEW_SELECTION", '"ALTURA
 arcpy.CopyFeatures_management('arboles_lyr', 'arboles_15m.shp'')</pre>
 <p>En la documentación de Esri tenéis más detalles sobre la función <em><a rel="noreferrer noopener" href="https://pro.arcgis.com/es/pro-app/latest/tool-reference/data-management/select-layer-by-attribute.htm" target="_blank">SelectLayerByAttribute</a></em>  </p>
     
-</details>
+<br></details>
 <details>
   <summary><strong>Seleccionar entidades por localización y guardarlas en una capa nueva</strong></summary><br>
     
@@ -213,7 +213,7 @@ arcpy.CopyFeatures_management('arboles_lyr', 'arboles_parcela.shp'')</pre>
 <p> En la documentación de Esri tenéis más detalles sobre la función <em><a rel="noreferrer noopener" href="https://desktop.arcgis.com/es/arcmap/latest/tools/data-management-toolbox/select-layer-by-location.htm" target="_blank">SelectLayerByLocation</a></em> </p>
     
     
-</details>
+<br></details>
 <details>
   <summary><strong>Cursores - acceder a las tablas de atributos</strong></summary><br>
     
@@ -268,7 +268,7 @@ for fila in cursor:
         cursor.updaterow(fila)
 del cursor</pre>
     
-</details>
+<br></details>
 <h2><strong>Datos ráster 🛰</strong></h2>
 <details>
   <summary><strong>Listar y filtrar capas ráster</strong></summary><br>
@@ -291,7 +291,7 @@ arcpy.ListRasters('Temperaturas maximas')
 # Listar solo las capas cuyo nombre empiece por 'Temp' y sean de tipo TIFF
 arcpy.ListRasters('Temp*', 'TIFF')</pre>
     
-</details>
+<br></details>
 <details>
   <summary><strong>Obtener la resolución de una capa</strong></summary><br>
     
@@ -300,7 +300,7 @@ arcpy.ListRasters('Temp*', 'TIFF')</pre>
 resolucion = capa_raster.meanCellWidth</pre>
     
     
-</details>
+<br></details>
 <details>
   <summary><strong>Calcular estadísticas</strong></summary><br>
    
@@ -308,7 +308,7 @@ resolucion = capa_raster.meanCellWidth</pre>
 <pre >arcpy.CalculateStatistics_management(capa_raster)</pre>
     
     
-</details>
+<br></details>
 <details>
   <summary><strong>Obtener las coordenadas de los límites de la capa</strong></summary><br>
    
@@ -320,7 +320,7 @@ print(limites)</pre>
 <p>Este código devolverá algo así: </p>
 <p>XMIN = 569301.0, XMAX = 810701.0, YMIN = 4413136.0, YMAX = 4755136.0</p>
     
-</details>
+<br></details>
 <details>
   <summary><strong>Reclasificar valores - álgebra de mapas</strong></summary><br>
     
@@ -340,7 +340,7 @@ orientacion_este.save('aspect_este.tif')</pre>
 altitud_pendientes.save('reclasificacion.tif')</pre>
 <p>🗺 Nota: si se usan capas distintas éstas deben encontrarse en el mismo SRC, o si no los píxeles no coincidirán</p>  
     
-</details>
+<br></details>
 <details>
   <summary><strong>Matrices</strong></summary><br>
     
@@ -358,7 +358,7 @@ raster_matriz.min()
 # Extraer el valor máximo
 raster_matriz.max()</pre>
     
-</details>
+<br></details>
 <details>
   <summary><strong>Cambiar la resolución de una capa</strong></summary><br>
     
@@ -375,7 +375,7 @@ else:
       print('Resolución óptima')</pre>
 <p>En la documentación de Esri tenéis más detalles sobre la función <em><a href="https://pro.arcgis.com/es/pro-app/latest/tool-reference/data-management/resample.htm" target="_blank" rel="noreferrer noopener">Resample_management</a></em></p>
     
-</details>
+<br></details>
   
 ## ¡Sígueme!
 [![](https://img.shields.io/badge/@progra_mapa-white?style=for-the-badge&labelColor=blue&logo=Twitter&logoColor=white)](https://twitter.com/progra_mapa)[![](https://img.shields.io/badge/PrograMapa-grey?style=for-the-badge&logo=wordpress)](https://programapa.wordpress.com)[![](https://img.shields.io/badge/Roberto-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/robertojl)[![](https://img.shields.io/badge/@progra_mapa-white?style=for-the-badge&logo=instagram)](https://instagram.com/progra_mapa)
