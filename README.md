@@ -1,7 +1,7 @@
 # Apuntes de ArcPy 
 <img src="https://programapa.files.wordpress.com/2021/03/arcpy.png" width="300" height="200" text-align: center>
 <p>Por Rober J</p>
-<h2><strong>Introducción 🤓</strong></h2>
+<h2><strong>🤓 Introducción</strong></h2>
 <details>
   <summary><strong>Python y ArcGIS</strong></summary><br>
   Python es un lenguaje de programación que puede usarse junto a los Sistemas de Información Geográfica (SIG) para ampliar sus funcionalidades mediante la automatización de geoprocesos, gestión avanzada de los datos y creación de nuevas herramientas (entre otras cosas), convirtiéndose en uno de los lenguajes favoritos para hacer toda clase de virguerías con la información geoespacial y no por casualidad: su facilidad de uso (relativa) y flexibilidad lo hace muy atractivo para usarlo en múltiples plataformas por usuarios no muy familiarizados con la programación informática.
@@ -143,7 +143,7 @@ arcpy.Resample_management('capa_entrada', 'capa_salida', 'nueva_resolución', 'M
 </pre>
   
 <br></details> 
-<h2><strong>Datos vectoriales 📐</strong></h2>
+<h2><strong>📐 Datos vectoriales</strong></h2>
 <details>
   <summary><strong>Comprobar si un campo existe, y si no crearlo</strong></summary><br>
     
@@ -269,7 +269,7 @@ for fila in cursor:
 del cursor</pre>
     
 <br></details>
-<h2><strong>Datos ráster 🛰</strong></h2>
+<h2><strong>🛰️ Datos ráster</strong></h2>
 <details>
   <summary><strong>Listar y filtrar capas ráster</strong></summary><br>
     
@@ -377,5 +377,5 @@ else:
     
 <br></details>
   
-## ¡Sígueme!
+## 🌐 ¡Sígueme!
 [![](https://img.shields.io/badge/@progra_mapa-white?style=for-the-badge&labelColor=blue&logo=Twitter&logoColor=white)](https://twitter.com/progra_mapa)[![](https://img.shields.io/badge/PrograMapa-grey?style=for-the-badge&logo=wordpress)](https://programapa.wordpress.com)[![](https://img.shields.io/badge/Roberto-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/robertojl)[![](https://img.shields.io/badge/@progra_mapa-white?style=for-the-badge&logo=instagram)](https://instagram.com/progra_mapa)
