@@ -1,6 +1,12 @@
 # Apuntes de ArcPy 
-<img src="https://programapa.files.wordpress.com/2021/03/arcpy.png" width="300" height="200" text-align: center>
-<p>Por Rober J</p>
+<img src="https://programapa.files.wordpress.com/2021/03/arcpy.png" width="350" height="200" text-align: center>
+
+Por Rober J
+
+[![](https://img.shields.io/badge/@progra_mapa-white?style=for-the-badge&labelColor=blue&logo=Twitter&logoColor=white)](https://twitter.com/progra_mapa)[![](https://img.shields.io/badge/PrograMapa-grey?style=for-the-badge&logo=wordpress)](https://programapa.wordpress.com)[![](https://img.shields.io/badge/Roberto-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/robertojl)
+
+<br>
+
 <h2><strong>🤓 Introducción</strong></h2>
 <details>
   <summary><strong>Python y ArcGIS</strong></summary><br>
@@ -376,6 +382,3 @@ else:
 <p>En la documentación de Esri tenéis más detalles sobre la función <em><a href="https://pro.arcgis.com/es/pro-app/latest/tool-reference/data-management/resample.htm" target="_blank" rel="noreferrer noopener">Resample_management</a></em></p>
     
 <br></details>
-  
-## 🌐 ¡Sígueme!
-[![](https://img.shields.io/badge/@progra_mapa-white?style=for-the-badge&labelColor=blue&logo=Twitter&logoColor=white)](https://twitter.com/progra_mapa)[![](https://img.shields.io/badge/PrograMapa-grey?style=for-the-badge&logo=wordpress)](https://programapa.wordpress.com)[![](https://img.shields.io/badge/Roberto-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/robertojl)[![](https://img.shields.io/badge/@progra_mapa-white?style=for-the-badge&logo=instagram)](https://instagram.com/progra_mapa)
