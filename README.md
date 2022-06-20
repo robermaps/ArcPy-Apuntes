@@ -9,8 +9,10 @@ Por Rober J
 <h2><strong>🤓 Introducción</strong></h2>
 <details>
   <summary><strong>Python y ArcGIS</strong></summary><br>
-  Cada SIG cuenta con su propia librería de Python que permite acceder a los geoprocesos de dicho SIG. En este caso, ArcPy es la librería que da acceso a las funciones de ArcGIS en un entorno Python, dándonos acceso a las cajas de herramientas de geoprocesamiento estándar y a la posibilidad de usar otros módulos (siempre que tengamos licencia para usarlos)
-¿Qué es lo que cambia? Parece contraintuitivo sustituir un amigable cuadro de texto por un churro de texto, pero gracias a ello accedemos a una herramienta mucho más flexible, ya que dentro de un script (un pequeño código) podemos diseñar qué se ejecuta, cuándo se ejecuta y con qué parámetros, encadenando unos procesos con otros y obteniendo resultados a nuestra medida.
+ <p> Cada SIG cuenta con su propia librería de Python que permite acceder a los geoprocesos de dicho SIG. En este caso, ArcPy es la librería que da acceso a las funciones de ArcGIS en un entorno Python, dándonos acceso a las cajas de herramientas de geoprocesamiento estándar y a la posibilidad de usar otros módulos (siempre que tengamos licencia para usarlos)
+</p>
+
+<p>¿Qué es lo que cambia? Parece contraintuitivo sustituir un amigable cuadro de texto por un churro de texto, pero gracias a ello accedemos a una herramienta mucho más flexible, ya que dentro de un script (un pequeño código) podemos diseñar qué se ejecuta, cuándo se ejecuta y con qué parámetros, encadenando unos procesos con otros y obteniendo resultados a nuestra medida.</p>
   
   
   ![arcpy_clip](https://user-images.githubusercontent.com/81579458/142191380-5a3f7ba3-8a54-49af-81f6-3be5ba406011.png)
